@@ -43,11 +43,8 @@ class App extends React.Component {
             cardsChoosen: this.state.cardsChoosen,
             selectedCards
         });
-        console.log(this.state.cardsChoosen);
         if (this.state.cardsChoosen.length === 3) {
-          console.log("send data to logic to check for set ");
             if (set.isSet(this.state.cardsChoosen)) {
-            console.log(set.isSet(this.state.cardsChoosen));
                 alert("Great job! you found a set(:");
             } else {
                 alert("This is not a set..");
@@ -134,7 +131,7 @@ class App extends React.Component {
         let numOfCards = 12;
         let selectedCards = [];
         //randomly choosing 12 cards
-        for (let z = 0; z < numOfCards; z++) {
+        for (let i = 0; i < numOfCards; i++) {
             let indexToRemove = Math.floor(Math.random() * cards.length);
             let selectedCard = cards[indexToRemove];
             selectedCards.push(selectedCard);
@@ -143,18 +140,16 @@ class App extends React.Component {
                 cards.splice(indexToRemove, 1);
             }
         }
-        console.log(selectedCards);
         return selectedCards;
     }
 
   creatingRows(cardsArray) {
     let selectedCards = [];
-    for (let z = 0; z < cardsArray.length; z += 4) {
+    for (let i = 0; i < cardsArray.length; i += 4) {
       let end = z + 4;
       let row = cardsArray.slice(z, end);
       selectedCards.push(row);
     }
-    console.log("selectedCards", selectedCards);
     let fourInRow = c.map(x => (
       <Row key={`row${z + 1}`} value={x}>
         {" "}
