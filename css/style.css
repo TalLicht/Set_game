@@ -1,0 +1,31 @@
+table{
+	margin-left: 20%;
+}
+
+.board{
+    text-align: center;
+}
+
+#title{
+	margin-left: 38%;
+}
+
+.card{
+	height: 200px;
+	width: 200px;
+	border: 1px solid black;
+}
+
+.card.selected{
+    border: 1px solid red;
+    transform: scale(1.00)
+}
+.row{
+    display: flex;
+    justify-content: center;
+}
+
+img{
+	height: 100%;
+	width: 100%;
+}
